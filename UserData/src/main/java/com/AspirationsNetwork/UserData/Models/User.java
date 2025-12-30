@@ -6,9 +6,14 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User {
-
-    String bio;
+    String uid;
+    String accountType;
+    String affiliation;
+    String [] badges;
+    String [] socials;
     String firstName;
     String lastName;
-    String profilePic;
+    String email;
+    String avatar;
+    String role;
 }
