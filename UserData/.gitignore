@@ -17,6 +17,9 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
+
+src/main/resources/maxx-backendmem-firebase-adminsdk-fbsvc-6c60ce164f.json
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
