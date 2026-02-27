@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://aspirationnetwork-a633f.web.app"})
 @RequestMapping("/api")
 public class UserInfoController {
     private final UserInfoService userInfoService;
