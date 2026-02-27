@@ -17,21 +17,18 @@ import java.io.InputStream;
 public class FireBaseConfig {
 
 
-
     @Bean
-  public   FirebaseApp firebaseApp() throws  IOException{
-
-        InputStream serviceAccount = new ClassPathResource("aspirationsbackend-fd06249fb4ff.json").getInputStream();
+    public FirebaseApp firebaseApp() throws IOException {
         FirebaseOptions options = FirebaseOptions.builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                // This line is the magic fix: it tells Firebase to get
+                // credentials automatically from the environment
+                .setCredentials(GoogleCredentials.getApplicationDefault())
                 .build();
 
         if (FirebaseApp.getApps().isEmpty()) {
-
-            return  FirebaseApp.initializeApp(options);
-        }else {
-            return  FirebaseApp.getInstance();
+            return FirebaseApp.initializeApp(options);
         }
+        return FirebaseApp.getInstance();
     }
 
     @Bean
